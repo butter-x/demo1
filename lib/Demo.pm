@@ -1,6 +1,10 @@
 package Demo;
 use Mojo::Base 'Mojolicious', -signatures;
 
+
+use My::Controller;
+has controller_class => 'My::Controller';
+
 # This method will run once at server start
 sub startup ($self) {
 
@@ -9,6 +13,8 @@ sub startup ($self) {
 
   # Configure the application
   $self->secrets($config->{secrets});
+
+  $self->preload_namespaces(['My::Controller']);
 
   # Router
   my $r = $self->routes;

@@ -1,5 +1,5 @@
-package Demo::Controller::Example;
-use Mojo::Base 'Mojolicious::Controller', -signatures;
+package My::Controller::Example;
+use Mojo::Base 'My::Controller', -signatures;
 
 # This action will render a template
 sub welcome ($self) {
